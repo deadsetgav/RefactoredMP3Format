@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WindowsFormsApplication1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SourceFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Dropbox\</Value>
+    </Setting>
+    <Setting Name="OutFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Music\</Value>
+    </Setting>
+    <Setting Name="FormatStyle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Gav</Value>
+    </Setting>
+    <Setting Name="CopyStyle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Copy</Value>
+    </Setting>
+    <Setting Name="Log" Type="System.String" Scope="User">
+      <Value Profile="(Default)">...\Log.txt</Value>
+    </Setting>
+    <Setting Name="FixTags" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LogToFile" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AppendLog" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LogFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">log.txt</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
