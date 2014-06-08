@@ -1,7 +1,6 @@
 ﻿using CommonInterface;
 using Domain.Exceptions;
 using Domain.Interfaces;
-using Id3LibTagAdapter;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;

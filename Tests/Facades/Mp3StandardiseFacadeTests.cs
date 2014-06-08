@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using CommonInterface;
+using Domain;
 using Domain.Concrete;
 using Domain.Facade;
 using Id3LibTagAdapter;
@@ -54,7 +55,7 @@ namespace Tests
 
         }
 
-        [TestMethod]
+        [TestMethod] 
         [Ignore]
         public void TestLiveData()
         {

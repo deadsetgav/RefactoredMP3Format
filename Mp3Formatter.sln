@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "WindowsFormsApplication1\App.csproj", "{92AB2AA8-7E81-4370-982A-48B941AA6F93}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRepository", "DataRepository\DataRepository.csproj", "{67C4A00C-B5CC-4295-9A0F-D1CF881BC215}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonInterface", "CommonInterface\CommonInterface.csproj", "{3D3E6ED9-E691-4594-AB7D-146472BB789F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagLibTagAdapter", "TagLibTagAdapter\TagLibTagAdapter.csproj", "{6B434A71-74EF-42BE-9823-76B89209AD7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,10 @@ Global
 		{3D3E6ED9-E691-4594-AB7D-146472BB789F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D3E6ED9-E691-4594-AB7D-146472BB789F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D3E6ED9-E691-4594-AB7D-146472BB789F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B434A71-74EF-42BE-9823-76B89209AD7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B434A71-74EF-42BE-9823-76B89209AD7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B434A71-74EF-42BE-9823-76B89209AD7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B434A71-74EF-42BE-9823-76B89209AD7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,39 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Id3LibTagAdapter;
 using Domain.Concrete;
+using CommonInterface;
 
 namespace Tests
 {
 
-    public class LogFile : ILog
-    {
-        private StreamWriter _log;
-        public LogFile(string path)
-        {
-            _log = new StreamWriter(path, true);
-            _log.AutoFlush = true;
-        }
-        public void Close()
-        {
-            _log.Flush();
-            _log.Close();
-            _log.Dispose();
-        }
-        public void WriteVerbose(string info)
-        {
-            _log.WriteLine(info);
-        }
-
-        public void WriteInfo(string info)
-        {
-            _log.WriteLine(info);
-        }
-
-        public void WriteError(string info, Exception ex)
-        {
-            _log.WriteLine(string.Format("{0}:{1}", info, ex.Message));
-        }
-    }
+    
 
     public class TestAlbumFileReader:IAlbumFileReader
     {
@@ -122,16 +95,43 @@ namespace Tests
 
             return artist;
         }
-    
+
+        public static IAlbum GetImperfectDeafheavenAlbum()
+        {
+            var artist = "Deafheaven";
+            var album = "Roads To Judah";
+            var year = "2011";
+            var reader = new TestAlbumFileReader();
+            reader._albumTracks.Add(new TestMp3() { Track = "01", Title="VIOLENT", BitRate=320, Artist=artist, Album=album, AlbumArtist=artist, FullFilePath="c:\test01.mp3",Year = year });
+            reader._albumTracks.Add(new TestMp3() { Track = "02", Title = "Languge Games", BitRate = 320, Artist = artist, Album = album, AlbumArtist = artist, FullFilePath = "c:\test02.mp3", Year = "2010" });
+            reader._albumTracks.Add(new TestMp3() { Track = "03", Title = "Unrequited", BitRate = 320, Artist = "DEAFHEAVEN", Album = album, AlbumArtist = "", FullFilePath = "c:\test03.mp3", Year = year });
+            reader._albumTracks.Add(new TestMp3() { Track = "04", Title = "TunnelOfTrees", BitRate = 320, Artist = artist, Album = "RoadsToJudah", AlbumArtist = "", FullFilePath = "c:\test04.mp3", Year = year }); 
+            return new Album(album, artist, reader);
+        }
+
+        public static IAlbum GetPerfectDeafheavenAlbum()
+        {
+            var artist = "Deafheaven";
+            var album = "Roads To Judah";
+            var year = "2011";
+            var reader = new TestAlbumFileReader();
+            reader._albumTracks.Add(new TestMp3() { Track = "1", Title = "Violent", BitRate = 128, Artist = artist, Album = album, AlbumArtist = artist, FullFilePath = "l:\test01.mp3", Year = year });
+            reader._albumTracks.Add(new TestMp3() { Track = "2", Title = "Language Games", BitRate = 128, Artist = artist, Album = album, AlbumArtist = artist, FullFilePath = "l:\test02.mp3", Year = year });
+            reader._albumTracks.Add(new TestMp3() { Track = "3", Title = "Unrequited", BitRate = 128, Artist = artist, Album = album, AlbumArtist = artist, FullFilePath = "l:\test03.mp3", Year = year });
+            reader._albumTracks.Add(new TestMp3() { Track = "4", Title = "Tunnel Of Trees", BitRate = 128, Artist = artist, Album = album, AlbumArtist = artist, FullFilePath = "l:\test04.mp3", Year = year });
+            return new Album(album, artist, reader);
+        }
+
     }
   
 
-    public class TestMp3 : IMp3
+    public class TestMp3 : IUpgradeMp3
     {
 
         public TestMp3()
         {
             Saved = false;
+            AlbumArtist = string.Empty;
         }
 
         public string Album { get; set; }
@@ -147,6 +147,11 @@ namespace Tests
         public void Save()
         {
             Saved = true;
+        }
+
+        public void SetNewFilename(string newFilename)
+        {
+            FileName = newFilename;
         }
     }
 

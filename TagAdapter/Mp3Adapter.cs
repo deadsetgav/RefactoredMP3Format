@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 using Mp3Lib;
 using Id3Lib;
 using Id3Lib.Frames;
+using CommonInterface;
 
 namespace Id3LibTagAdapter
 {
       
-    public class Mp3Adapter : IMp3
+    public class OldMp3Adapter : IMp3
     {
         // This class uses the id3Lib class for the reading / writing of Mp3 tags
         // 
         // This class acts as an adapter so no other part of the application
         // needs to know about the 3rd party class library.
         
-        public static IMp3 GetMp3(string path)
+        private static IMp3 GetMp3(string path)
         {
-            return new Mp3Adapter(path);
+            return new OldMp3Adapter(path);
         }
 
         private TagHandler _handler;
@@ -59,7 +60,7 @@ namespace Id3LibTagAdapter
         {
             get { return GetBitRate(); }
         }
-        private Mp3Adapter(string filepath)
+        private OldMp3Adapter(string filepath)
         {
             _mp3 = new Mp3File(filepath);
             _handler = _mp3.TagHandler;
@@ -93,4 +94,6 @@ namespace Id3LibTagAdapter
             }         
         }
     }
+
+
 }

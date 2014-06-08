@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using CommonInterface;
+using Domain;
 using Domain.Concrete;
 using Domain.Facade;
 using Domain.Factory;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Id3LibTagAdapter;
+using TagLibTagAdapter;
 
 namespace Tests
 {
@@ -59,7 +60,7 @@ namespace Tests
         [TestMethod]
         public void TestGetAlbumYearFromTracks_POC_Logic()
         {
-            var fileList = MusicDirectoryReader.GetMusicFilesFromFolder("C:\\Users\\Gavin\\Documents\\Visual Studio 2012\\Projects\\RefactoredMP3Format\\Testing\\out\\Ride\\Going Blank Again");
+            var fileList = MusicDirectoryReader.GetMusicFilesFromFolder("C:\\Users\\Gavin\\Documents\\Visual Studio 2013\\Projects\\RefactoredMP3Format\\Testing\\out\\Ride\\Going Blank Again");
             var trackList = new List<IMp3>();
             foreach (var file in fileList)
             {

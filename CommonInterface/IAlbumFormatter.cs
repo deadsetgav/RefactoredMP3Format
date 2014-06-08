@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CommonInterface;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Id3LibTagAdapter;
+
 
 namespace Domain.Interfaces
 {

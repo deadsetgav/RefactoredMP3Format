@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.Concrete;
 using Domain.Facade;
 using Domain.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -24,13 +25,14 @@ namespace Tests.Facades
             var outDir = new DirectoryInfo(_settings.OutputDirectoryPath);
         }
 
-        [TestMethod, Ignore()]
-        public void quickTest()
+        [TestMethod]
+        [Ignore()]
+        public void TestReadToDB()
         {
             _settings.SourceDirectoryPath = "L:\\Music";
 
             var facade = new Mp3BitRateFacade(_settings);
-            var myLog = new LogFile("c:\testLog.txt");
+            var myLog = new LogFile("ReadToDBLog.txt");
             facade.ProcessLog = myLog;
             facade.Process();
 

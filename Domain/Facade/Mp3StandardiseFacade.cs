@@ -1,8 +1,9 @@
-﻿using DataRepository;
+﻿using CommonInterface;
+using DataRepository;
 using Domain.Concrete;
 using Domain.Exceptions;
+using Domain.HelperClasses;
 using Domain.Interfaces;
-using Id3LibTagAdapter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -108,6 +109,9 @@ namespace Domain.Facade
         
         public void MakeTrackMatch(IMp3 track)
         {
+            if (track.AlbumArtist == string.Empty)
+                track.AlbumArtist = MostCommonArtistName;
+
             if (TrackCloselyMatchesCommonAlbumTitles(track))
             {
                 track.Album = MostCommonAlbumTitle;
@@ -124,10 +128,10 @@ namespace Domain.Facade
         private bool TrackCloselyMatchesCommonAlbumTitles(IMp3 track) 
         {
             var closeMatch = false;
-            if (AlbumReader.StringsCloselyMatch(track.Year, MostCommonAlbumYear) &&
-                 AlbumReader.StringsCloselyMatch(track.Artist ,MostCommonArtistName) &&
-                  AlbumReader.StringsCloselyMatch (track.AlbumArtist , MostCommonArtistName) &&
-                   AlbumReader.StringsCloselyMatch(track.Album, MostCommonAlbumTitle))
+            if (StringMatcher.StringsCloselyMatch_IgnoreCase(track.Year, MostCommonAlbumYear) &&
+                 StringMatcher.StringsCloselyMatch_IgnoreCase(track.Artist ,MostCommonArtistName) &&
+                  StringMatcher.StringsCloselyMatch_IgnoreCase (track.AlbumArtist , MostCommonArtistName) &&
+                   StringMatcher.StringsCloselyMatch_IgnoreCase(track.Album, MostCommonAlbumTitle))
             {
                 closeMatch = true;
             }

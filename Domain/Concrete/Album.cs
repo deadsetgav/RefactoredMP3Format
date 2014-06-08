@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using Id3LibTagAdapter;
 using System.Collections;
+using CommonInterface;
 
 namespace Domain.Concrete
 {

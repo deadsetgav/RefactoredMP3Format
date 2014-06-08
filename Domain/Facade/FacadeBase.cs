@@ -1,4 +1,5 @@
 ﻿using Domain.Concrete;
+using Domain.HelperClasses;
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Domain.Facade
 {
     public abstract class FacadeBase
     {
-        public const string VERSION = "v0.3";
+        public const string VERSION = "v0.5";
         protected ISettings settings { get; set; }
 
         public FacadeBase(ISettings setting)
@@ -29,10 +30,8 @@ namespace Domain.Facade
 
         public IMusicCollection ReadSourceDirectory()
         {
-            var sourceFilePath = settings.SourceDirectoryPath;
-            var collection = new MusicCollection(sourceFilePath);
-            collection.ScanItemsToCollection();
-            return collection;
+            var fileReader = new CollectionFileReader();
+            return fileReader.ReadCollection(settings.SourceDirectoryPath);
         }
 
     }

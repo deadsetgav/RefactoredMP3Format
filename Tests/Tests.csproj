@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tests</RootNamespace>
     <AssemblyName>Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,6 +52,7 @@
     <Compile Include="Concrete\SourceMusicCollectionTests.cs" />
     <Compile Include="Concrete\MusicDirectoryReaderTests.cs" />
     <Compile Include="DataRepository\DataRepositoryTest.cs" />
+    <Compile Include="Facades\Mp3UpgradeFacadeTests.cs" />
     <Compile Include="Facades\Mp3BitRateFacadeTests.cs" />
     <Compile Include="Facades\Mp3FormatterFacadeTests.cs" />
     <Compile Include="Concrete\AlbumFormatterTests.cs" />
@@ -77,6 +79,10 @@
     <ProjectReference Include="..\TagAdapter\Id3LibTagAdapter.csproj">
       <Project>{08a23cfe-3d78-41a4-9c08-b0e288ce64e3}</Project>
       <Name>Id3LibTagAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TagLibTagAdapter\TagLibTagAdapter.csproj">
+      <Project>{6b434a71-74ef-42be-9823-76b89209ad7c}</Project>
+      <Name>TagLibTagAdapter</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

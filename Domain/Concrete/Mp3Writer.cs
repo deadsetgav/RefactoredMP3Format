@@ -6,8 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Domain.Concrete;
-using Id3LibTagAdapter;
 using System.Text.RegularExpressions;
+using CommonInterface;
+using TagLibTagAdapter;
 
 namespace Domain.Factory
 {

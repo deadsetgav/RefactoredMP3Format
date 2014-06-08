@@ -1,4 +1,4 @@
-﻿using Id3LibTagAdapter;
+﻿using CommonInterface;
 using System;
 using System.Collections.Generic;
 using System.Linq;

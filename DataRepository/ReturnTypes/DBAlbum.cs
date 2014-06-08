@@ -1,5 +1,5 @@
-﻿using Domain.Interfaces;
-using Id3LibTagAdapter;
+﻿using CommonInterface;
+using Domain.Interfaces;
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace DataRepository
 {
     public class DBArtist : IArtist
     {
-        private List<IAlbum> _albums;
+        private List<IAlbum> _albums = new List<IAlbum>();
 
         public DBArtist(string artistName)
         {

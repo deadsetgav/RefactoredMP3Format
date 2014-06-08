@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Id3LibTagAdapter
+namespace CommonInterface
 {
     public interface IMp3
     {
@@ -15,6 +15,9 @@ namespace Id3LibTagAdapter
         int BitRate { get; }
     }
 
-
+    public interface IUpgradeMp3 :IMp3
+    {
+        void SetNewFilename(string newFilename);
+    }
 
 }

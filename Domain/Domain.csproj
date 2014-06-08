@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Domain</RootNamespace>
     <AssemblyName>Domain</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\Album.cs" />
+    <Compile Include="Concrete\LogFile.cs" />
     <Compile Include="Concrete\MusicCollectionDatabaseWriter.cs" />
     <Compile Include="Concrete\AlbumFactory.cs" />
     <Compile Include="Concrete\AlbumFileReader.cs" />
@@ -54,6 +56,9 @@
     <Compile Include="Concrete\Mp3Writer.cs" />
     <Compile Include="Concrete\FormatterSettings.cs" />
     <Compile Include="Facade\Mp3StandardiseFacade.cs" />
+    <Compile Include="Facade\Mp3UpgradeFacade.cs" />
+    <Compile Include="HelperClasses\CollectionFileReader.cs" />
+    <Compile Include="HelperClasses\StringMatcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,11 +70,12 @@
       <Project>{67c4a00c-b5cc-4295-9a0f-d1cf881bc215}</Project>
       <Name>DataRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TagAdapter\Id3LibTagAdapter.csproj">
-      <Project>{08a23cfe-3d78-41a4-9c08-b0e288ce64e3}</Project>
-      <Name>Id3LibTagAdapter</Name>
+    <ProjectReference Include="..\TagLibTagAdapter\TagLibTagAdapter.csproj">
+      <Project>{6b434a71-74ef-42be-9823-76b89209ad7c}</Project>
+      <Name>TagLibTagAdapter</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

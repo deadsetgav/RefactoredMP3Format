@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using CommonInterface;
+using Domain;
 using Domain.Facade;
 using Domain.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -8,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Id3LibTagAdapter;
+using TagLibTagAdapter;
 
 namespace Tests
 {

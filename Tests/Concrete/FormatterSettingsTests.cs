@@ -63,7 +63,7 @@ namespace Tests
         public void TestGetTestingFolder()
         {
             var path = GetTestingFolder();
-            Assert.AreEqual("C:\\Users\\Gavin\\Documents\\Visual Studio 2012\\Projects\\RefactoredMP3Format\\Testing", path);
+            Assert.AreEqual("C:\\Users\\Gavin\\Documents\\Visual Studio 2013\\Projects\\RefactoredMP3Format\\Testing", path);
         }
 
         [TestMethod]

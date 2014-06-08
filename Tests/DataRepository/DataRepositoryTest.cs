@@ -103,6 +103,18 @@ namespace Tests.DataRepository
 
             Assert.IsFalse(exists);
         }
+
+        [TestMethod, Ignore]
+        public void TestDB_09_TestLiveDB()
+        {
+            var dbAceess = new DataAccess("Albums");
+            var exists = dbAceess.AlbumExists("Soundgarden", "Superunknown");
+            var album = dbAceess.GetAlbum("Soundgarden", "Superunknown");
+
+            Assert.IsTrue(exists);
+            Assert.IsNotNull(album);
+
+        }
     }
 
 }

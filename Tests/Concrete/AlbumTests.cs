@@ -9,6 +9,8 @@ using Domain.Interfaces;
 using Domain.Concrete;
 using System.IO;
 using Id3LibTagAdapter;
+using CommonInterface;
+using Domain.HelperClasses;
 
 namespace Tests
 {
